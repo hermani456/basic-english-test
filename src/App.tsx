@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { BookOpen, Ear, ArrowRight, PenTool, FileText } from 'lucide-react';
 import { assessments } from './data/assessments';
 import Header from './components/Header';
