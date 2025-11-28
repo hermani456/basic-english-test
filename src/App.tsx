@@ -137,7 +137,7 @@ export default function App() {
 
         {view === 'results' && getCurrentAssessment() && (
           <ResultsView
-            // @ts-ignore
+            // @ts-expect-error bla
             assessment={getCurrentAssessment()}
             answers={answers}
             writingAnswer={writingAnswer}

@@ -32,7 +32,7 @@ interface ResultsViewProps {
 const ResultsView: React.FC<ResultsViewProps> = ({ assessment, answers, writingAnswer, onReset, onHome }) => {
     const calculateScore = (section: keyof Assessment) => {
         let correct = 0;
-        // @ts-ignore
+        // @ts-expect-error bla 
         assessment[section].questions.forEach((q: Question) => {
             if (answers[q.id] === q.answer) correct++;
         });
@@ -48,7 +48,7 @@ const ResultsView: React.FC<ResultsViewProps> = ({ assessment, answers, writingA
     const renderReview = (section: keyof Assessment, title: string) => (
         <div className="mb-8">
             <h3 className="text-lg font-bold text-gray-800 mb-4 border-b pb-2">{title} Review</h3>
-            {/* @ts-ignore */}
+            {/* @ts-expect-error bla */}
             {assessment[section].questions.map((q: Question, idx: number) => {
                 const isCorrect = answers[q.id] === q.answer;
                 return (
